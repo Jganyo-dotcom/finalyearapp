@@ -21,7 +21,7 @@
   <a href=# class="me-3">TOPICS</a>
   <a href=# class="me-3">RENT STORE</a>
   {% if not user.is_authenticated %}
-      <a href=# class="me-3">REGISTER</a>
+      <a href="{% url 'register_view' %}" class="me-3">REGISTER</a>
       <a href="{% url 'login_view' %}" class="me-3">LOGIN</a>
   {% endif %}
 
