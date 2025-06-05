@@ -1,0 +1,37 @@
+{% extends 'store/layout.html' %}
+{% load static %}
+
+
+{% block body %}
+
+   
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+   
+  <form class="login-sunmit-form p-4 shadow rounded" action="{% url 'login' %}" method="POST">
+   <img src="{% static 'store/images/download.jpeg' %}" alt="Login Banner" class="form-banner">
+
+     {% csrf_token %} 
+     {% if message %}
+      <div class="text-center mb-2">
+    <div class="alert alert-danger mb-1" role="alert">
+      {{ message }}
+    </div>
+    <a href=# class="btn btn-link btn-sm">Register</a>
+  </div>
+    {% endif %}
+    
+    <h2 class="text-center mb-4">Login</h2>
+    <div class="mb-3">
+      <input type="text" name="username" class="form-control" placeholder="Username" required>
+    </div>
+    <div class="mb-3">
+      <input type="password" name="password" class="form-control" placeholder="Password" required>
+    </div>
+    <div class="d-grid">
+      <input type="submit" value="Login" class="btn btn-primary">
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+.my-menu {
+  display: flex;
+  background-color: #e0f7fa;
+  padding: 10px 30px;
+  border-radius: 5px;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.my-menu a {
+  color: #333;
+  text-decoration: none;
+}
+
+.my-menu a:hover {
+  text-decoration: underline;
+}
+
+.username-display {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.login-sunmit-form {
+  background-color: #ffffff;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.login-sunmit-form input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.form-banner {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+body {
+  background-image: url("images/photo-1494526585095-c41746248156.avif");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* full screen height */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white; /* or any color that contrasts */
+}
+
+
+h1{
+    color: yellow;
+
+}
