@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.models import User
-from models import profile
+from . models import profile
 
 # Create your views here.
 def index(request):
@@ -50,13 +50,13 @@ def register(request) :
             })
             
         if User.objects.filter( user = request.user).exists():
-             return render(request, 'store/register.html'{
-                 'message' : User already exists 
+             return render(request, 'store/register.html',{
+                 'message' : 'User already exists' 
              })
              
              
         new_user = profile.objects.create(user = request.user,
-                               email = email
+                               email = email,
                                password = password
                                )
         new_user.save()
