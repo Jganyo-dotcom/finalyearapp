@@ -72,6 +72,9 @@ def register(request) :
         return render(request, 'store/error.html',{
             'message': 'not allowed'
         })
+    
+def topics(request) :
+    return render(request, 'store/topics.html')
         
              
              
