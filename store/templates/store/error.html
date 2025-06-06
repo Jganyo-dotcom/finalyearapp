@@ -3,5 +3,7 @@
 {% load static %}
 
 {% block body %}
-<h1>LOG IN!!!!!</>
+{% if message %}
+        {{ message }}
+{% endif %}
 {% endblock %}
