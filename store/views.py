@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
-from .models import User
+from .models import User , Question, Topic
 from django.urls import reverse
+from django.shortcuts import get_object_or_404
 
 
 # Create your views here.
@@ -75,6 +76,16 @@ def register(request) :
     
 def topics(request) :
     return render(request, 'store/topics.html')
+
+def submit(request, question_id):
+    if request.user.is_authenticated :
+        q_topic = get_object_or_404(Topic, id = question_id)
+        q_number =Question.objects.get(topic = q_topic)
+        q_answer =q_number.correct_option 
+        user_answer = request.POST['answer']
+        if user_answer == q_answer:
+            user_score = Topic.objects.get(user = request.user)
+            user_score.score = score + 1 
         
              
              
