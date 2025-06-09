@@ -5,4 +5,29 @@
 {% block body %}
 <h1 class="topic">Various Topics<h1>
 
+
+<!-- Info container for dataset results -->
+<div class="info p-3 border rounded  mb-3">
+  <!-- Data will be inserted here -->
+</div>
+
+<!-- Buttons with data-info attributes for fetching -->
+<button type="button" class="btn btn-primary m-1" data-info="education">Education</button>
+<button type="button" class="btn btn-secondary m-1" data-info="economy">Economy</button>
+<button type="button" class="btn btn-success m-1" data-info="psychology">Psychology</button>
+<button type="button" class="btn btn-danger m-1" data-info="health medicine">Health & Medicine</button>
+<button type="button" class="btn btn-warning m-1" data-info="environmental science">Environmental Science</button>
+<button type="button" class="btn btn-info m-1" data-info="technology">Technology</button>
+
+<!-- Additional areas -->
+<button type="button" class="btn btn-dark m-1" data-info="sociology">Sociology</button>
+<button type="button" class="btn btn-light m-1" data-info="political science">Political Science</button>
+<button type="button" class="btn btn-primary m-1" data-info="history">History</button>
+<button type="button" class="btn btn-secondary m-1" data-info="art">Art</button>
+<button type="button" class="btn btn-success m-1" data-info="mathematics">Mathematics</button>
+<button type="button" class="btn btn-danger m-1" data-info="engineering">Engineering</button>
+
+<script src="{% static 'store/store.js' %}"></script>
+
+
 {% endblock %}
