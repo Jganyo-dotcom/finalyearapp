@@ -25,8 +25,17 @@
 <button type="button" class="btn btn-primary m-1" data-info="history">History</button>
 <button type="button" class="btn btn-secondary m-1" data-info="art">Art</button>
 <button type="button" class="btn btn-success m-1" data-info="mathematics">Mathematics</button>
-<button type="button" class="btn btn-danger m-1" data-info="engineering">Engineering</button>
+<button type="button" class="btn btn-danger m-1" data-info="engineering">Engineering</button><br><br><br><br>
 
+
+{% if request.user.is_authenticated %}
+<div>
+        <input type = 'text' id='search-text'>
+        <button class="search">SEARCH</button>
+</div>
+{% endif %}
+
+<!--linking my js file  -->
 <script src="{% static 'store/store.js' %}"></script>
 
 
