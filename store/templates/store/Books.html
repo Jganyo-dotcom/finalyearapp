@@ -1,0 +1,43 @@
+{% extends 'store/layout.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<h1 class = 'topic' id='book_title'>Books Search</h1>
+
+<!-- Info container for dataset results -->
+<div class="info_on_topic p-3 border rounded  mb-3 books-class">
+  <!-- Data will be inserted here -->
+</div>
+
+ <!-- Buttons with data-info attributes for fetching -->
+<button type="button" class="btn btn-primary m-1 " data-info="education">Education</button>
+<button type="button" class="btn btn-secondary m-1 " data-info="economy">Economy</button>
+<button type="button" class="btn btn-success m-1 " data-info="psychology">Psychology</button>
+<button type="button" class="btn btn-danger m-1 " data-info="health medicine">Health & Medicine</button>
+<button type="button" class="btn btn-warning m-1 " data-info="environmental science">Environmental Science</button>
+<button type="button" class="btn btn-info m-1 " data-info="technology">Technology</button>
+
+<!-- Additional areas -->
+<button type="button" class="btn btn-dark m-1 " data-info="sociology">Sociology</button>
+<button type="button" class="btn btn-light m-1 " data-info="political science">Political Science</button>
+<button type="button" class="btn btn-primary m-1 " data-info="history">History</button>
+<button type="button" class="btn btn-secondary m-1 " data-info="art">Art</button>
+<button type="button" class="btn btn-success m-1 " data-info="mathematics">Mathematics</button>
+<button type="button" class="btn btn-danger m-1 " data-info="engineering">Engineering</button><br><br><br><br>
+
+{% if request.user.is_authenticated %}
+<div id='center-wrapper'>
+<div id = 'booksearch-div'>
+        <input type = 'text' id='searchBook-value'>
+        <button id="searchbook-btn">SEARCH</button>
+</div>
+</div>
+
+   
+{% endif %}
+
+<!--linking my js file  -->
+<script src="{% static 'store/store.js' %}"></script>
+{% endblock %}

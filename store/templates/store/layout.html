@@ -17,7 +17,7 @@
 <body>
  
 <div class="d-flex my-menu">
-  <a href=#  class="me-3">STORES</a>
+  <a href="{% url 'books' %}"  class="me-3">BOOKS</a>
   <a href="{% url 'topics' %}" class="me-3">TOPICS</a>
   <a href=# class="me-3">RENT STORE</a>
   {% if not user.is_authenticated %}

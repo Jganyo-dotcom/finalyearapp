@@ -12,26 +12,26 @@
 </div>
 
 <!-- Buttons with data-info attributes for fetching -->
-<button type="button" class="btn btn-primary m-1" data-info="education">Education</button>
-<button type="button" class="btn btn-secondary m-1" data-info="economy">Economy</button>
-<button type="button" class="btn btn-success m-1" data-info="psychology">Psychology</button>
-<button type="button" class="btn btn-danger m-1" data-info="health medicine">Health & Medicine</button>
-<button type="button" class="btn btn-warning m-1" data-info="environmental science">Environmental Science</button>
-<button type="button" class="btn btn-info m-1" data-info="technology">Technology</button>
+<button type="button" class="btn btn-primary m-1 custom" data-info="education">Education</button>
+<button type="button" class="btn btn-secondary m-1 custom" data-info="economy">Economy</button>
+<button type="button" class="btn btn-success m-1 custom" data-info="psychology">Psychology</button>
+<button type="button" class="btn btn-danger m-1 custom" data-info="health medicine">Health & Medicine</button>
+<button type="button" class="btn btn-warning m-1 custom" data-info="environmental science">Environmental Science</button>
+<button type="button" class="btn btn-info m-1 custom" data-info="technology">Technology</button>
 
 <!-- Additional areas -->
-<button type="button" class="btn btn-dark m-1" data-info="sociology">Sociology</button>
-<button type="button" class="btn btn-light m-1" data-info="political science">Political Science</button>
-<button type="button" class="btn btn-primary m-1" data-info="history">History</button>
-<button type="button" class="btn btn-secondary m-1" data-info="art">Art</button>
-<button type="button" class="btn btn-success m-1" data-info="mathematics">Mathematics</button>
-<button type="button" class="btn btn-danger m-1" data-info="engineering">Engineering</button><br><br><br><br>
+<button type="button" class="btn btn-dark m-1 custom" data-info="sociology">Sociology</button>
+<button type="button" class="btn btn-light m-1 custom" data-info="political science">Political Science</button>
+<button type="button" class="btn btn-primary m-1 custom" data-info="history">History</button>
+<button type="button" class="btn btn-secondary m-1 custom" data-info="art">Art</button>
+<button type="button" class="btn btn-success m-1 custom" data-info="mathematics">Mathematics</button>
+<button type="button" class="btn btn-danger m-1 custom" data-info="engineering">Engineering</button><br><br><br><br>
 
 
 {% if request.user.is_authenticated %}
 <div>
         <input type = 'text' id='search-text'>
-        <button class="search">SEARCH</button>
+        <button id="searchtopic">SEARCH</button>
 </div>
 {% endif %}
 

@@ -75,6 +75,9 @@ def register(request) :
     
 def topics(request) :
     return render(request, 'store/topics.html')
+
+def books(request):
+    return render(request, 'store/Books.html')
         
              
              
