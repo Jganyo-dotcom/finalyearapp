@@ -11,21 +11,21 @@
   <!-- Data will be inserted here -->
 </div>
 
- <!-- Buttons with data-info attributes for fetching -->
-<button type="button" class="btn btn-primary m-1 " data-info="education">Education</button>
-<button type="button" class="btn btn-secondary m-1 " data-info="economy">Economy</button>
-<button type="button" class="btn btn-success m-1 " data-info="psychology">Psychology</button>
-<button type="button" class="btn btn-danger m-1 " data-info="health medicine">Health & Medicine</button>
-<button type="button" class="btn btn-warning m-1 " data-info="environmental science">Environmental Science</button>
-<button type="button" class="btn btn-info m-1 " data-info="technology">Technology</button>
+ <!-- Buttons with real book titles as both label and data-info -->
+<button type="button" class="btn btn-primary m-1 typeBook" data-info="Pedagogy of the Oppressed">Pedagogy of the Oppressed</button>
+<button type="button" class="btn btn-secondary m-1 typeBook" data-info="Capital in the Twenty-First Century">Capital in the Twenty-First Century</button>
+<button type="button" class="btn btn-success m-1 typeBook" data-info="Thinking, Fast and Slow">Thinking, Fast and Slow</button>
+<button type="button" class="btn btn-danger m-1 typeBook" data-info="The Emperor of All Maladies">The Emperor of All Maladies</button>
+<button type="button" class="btn btn-warning m-1 typeBook" data-info="Silent Spring">Silent Spring</button>
+<button type="button" class="btn btn-info m-1 typeBook" data-info="The Innovators">The Innovators</button>
 
-<!-- Additional areas -->
-<button type="button" class="btn btn-dark m-1 " data-info="sociology">Sociology</button>
-<button type="button" class="btn btn-light m-1 " data-info="political science">Political Science</button>
-<button type="button" class="btn btn-primary m-1 " data-info="history">History</button>
-<button type="button" class="btn btn-secondary m-1 " data-info="art">Art</button>
-<button type="button" class="btn btn-success m-1 " data-info="mathematics">Mathematics</button>
-<button type="button" class="btn btn-danger m-1 " data-info="engineering">Engineering</button><br><br><br><br>
+<!-- Additional Subjects -->
+<button type="button" class="btn btn-dark m-1 typeBook" data-info="The Sociological Imagination">The Sociological Imagination</button>
+<button type="button" class="btn btn-light m-1 typeBook" data-info="The Prince">The Prince</button>
+<button type="button" class="btn btn-primary m-1 typeBook" data-info="Guns, Germs, and Steel">Guns, Germs, and Steel</button>
+<button type="button" class="btn btn-secondary m-1 typeBook" data-info="Ways of Seeing">Ways of Seeing</button>
+<button type="button" class="btn btn-success m-1 typeBook" data-info="Gödel, Escher, Bach">Gödel, Escher, Bach</button>
+<button type="button" class="btn btn-danger m-1 typeBook" data-info="Structures: Or Why Things Don't Fall Down">Structures: Or Why Things Don't Fall Down</button>
 
 {% if request.user.is_authenticated %}
 <div id='center-wrapper'>

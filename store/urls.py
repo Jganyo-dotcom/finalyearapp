@@ -9,7 +9,8 @@ urlpatterns = [
     path('register_view', views.register_view, name='register_view'),
     path('register', views.register, name='register'),
     path('topics', views.topics, name = 'topics'),
-    path('books', views.books, name = 'books')
+    path('books', views.books, name = 'books'),
+    path('my_library', views.library, name = 'library')
 ]
 
    

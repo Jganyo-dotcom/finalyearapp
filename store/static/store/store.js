@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function(){
              const link = item.url || 'not available'
              
                newdiv = document.createElement('div')
+               newbtn = document.createElement('button')
+               newbtn.textContent = 'Add to Library';
+               newbtn.className = "btn btn-sm btn-outline-primary mt-2 my-library"
                topic.innerHTML = area
                
     newdiv.innerHTML = `
@@ -29,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function(){
             `;
 
 
-    document.querySelector('.info').appendChild(newdiv)
+            newdiv.appendChild(newbtn)
+            document.querySelector('.info').appendChild(newdiv)
             
         }
         
@@ -71,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function(){
                     const link = item.url || 'not avalable'
                     
                     newdiv = document.createElement('div')
+                    newbtn = document.createElement('button')
+                    newbtn.textContent = 'Add to Library'
+                    newbtn.className = "btn btn-sm btn-outline-primary mt-2 my-library"
                     
             newdiv.innerHTML = `
             <strong>Title:</strong> ${name}<br>
@@ -79,8 +86,8 @@ document.addEventListener('DOMContentLoaded', function(){
             `;
 
 
+            newdiv.appendChild(newbtn)
             document.querySelector('.info').appendChild(newdiv)
-            
                     
                 }
                  document.querySelector('#search-text').value = '';
@@ -108,9 +115,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     document.querySelector('.info_on_topic').innerHTML = `<h1>Loading please wait ...<h1>`
                     fetch(`https://www.googleapis.com/books/v1/volumes?q=${book_title}`)
-                .then(response =>response.json())
-                .then(data=>{
-                     document.querySelector('.info_on_topic').innerHTML = ``
+                    .then(response =>response.json())
+                    .then(data=>{
+                        document.querySelector('.info_on_topic').innerHTML = ``
     
                     for (item of data.items){
                         let info =item.volumeInfo;
@@ -124,7 +131,9 @@ document.addEventListener('DOMContentLoaded', function(){
                         const pageCount = info.pageCount || 'not available';
 
                         let newdiv = document.createElement('div')
-                        let anewdiv = document.createElement('div')
+                        let newbtn = document.createElement('button')
+                        newbtn.textContent = 'Add to library'
+                        newbtn.className = "btn btn-sm btn-outline-primary mt-2 my-library"
                         newdiv.innerHTML = `
                         <strong>Title:</strong> ${title}<br>
                         <strong>Author:</strong> ${author}<br>
@@ -138,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         `;
 
                         
+                        newdiv.appendChild(newbtn)
                         document.querySelector('.info_on_topic').appendChild(newdiv)
                     }
                     document.querySelector('#searchBook-value').value ='';
@@ -152,5 +162,65 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
                 
             }
+
+            document.querySelectorAll('.typeBook').forEach(button =>{
+                let book_title =button.dataset.info
+                button.onclick = function(){
+
+                     document.querySelector('.info_on_topic').innerHTML = `<h1>Loading please wait ...<h1>`
+                    fetch(`https://www.googleapis.com/books/v1/volumes?q=${book_title}`)
+                    .then(response =>response.json())
+                    .then(data=>{
+                        document.querySelector('.info_on_topic').innerHTML = ``
+    
+                    for (item of data.items){
+                        let info =item.volumeInfo;
+                        const title = info.title || 'not available';
+                        const author = info.authors ? info.authors.join(',') : 'not available';
+                        const preview_link = info.previewLink || 'no link available';
+                        const info_link = info.infoLink ||'no link available'
+                        const lang = info.language ||'not available';
+                        const categories = info.categories ||'not available';
+                        const description =info.description|| 'not available';
+                        const pageCount = info.pageCount || 'not available';
+
+                        let newdiv = document.createElement('div')
+                        let newbtn = document.createElement('button')
+
+                        newbtn.textContent = "Add to Library";
+                        newbtn.className = "btn btn-sm btn-outline-primary mt-2 my-library";
+                        newdiv.innerHTML = `
+                        <strong>Title:</strong> ${title}<br>
+                        <strong>Author:</strong> ${author}<br>
+                        <strong>Preview link:</strong> <a href='${preview_link}' target='_blank'>Click to preview</a><br>
+                        <strong>Info link:</strong> <a href='${info_link}' target='_blank'>More info</a><br>
+                        <strong>Language:</strong> ${lang}<br>
+                        <strong>Category:</strong> ${categories}<br>
+                        <strong>Total pages:</strong> ${pageCount}<br>
+                        <hr>
+                        <strong>Description:</strong> ${description}
+                        `;
+
+                        newdiv.appendChild(newbtn)
+                        document.querySelector('.info_on_topic').appendChild(newdiv)
+            
+                    }
+                    document.querySelector('#searchBook-value').value ='';
+                    document.querySelector('#book_title').innerHTML= book_title
+                    
+        })
+                    .catch(error=>{
+                        console.error('error :', error)
+                    })
+                }
+                
+
+            })
+
+            document.querySelectorAll('.my-library').forEach(button =>{
+                button.onclick = function(){
+                    alert('not yet implemented')
+                }
+            })
     
 })

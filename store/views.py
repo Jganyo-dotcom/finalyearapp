@@ -78,6 +78,10 @@ def topics(request) :
 
 def books(request):
     return render(request, 'store/Books.html')
+
+
+def library(request) :
+    return render(request, 'store/library.html')
         
              
              
